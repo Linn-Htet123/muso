@@ -1,0 +1,92 @@
+
+/*font import*/
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;500&family=Macondo&family=Montserrat:ital,wght@0,100;0,400;1,100&family=Nunito:ital,wght@0,200;1,200&family=Open+Sans:ital,wght@0,300;1,300&family=Playfair+Display:ital,wght@0,400;1,500&family=Raleway:ital,wght@0,100;0,400;1,200&family=Red+Hat+Mono:ital,wght@0,300;1,400&family=Smooch&display=swap');
+/*variables*/
+:root{
+    --primary:#4f515a;
+    --secondary:#ebebeb;
+    --warning:#da0f41;
+    --buttonColor: #ffd424;
+}
+
+/*base style*/
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Nunito', sans-serif;
+    color:var(--primary)
+}
+body{
+    background: #0e1318;
+}
+a{
+    text-decoration: none;
+}
+button, .btn{
+    background: rgba(11, 14, 23, 0.82);
+    border-radius: 8px;
+    border:0;
+    padding: 8px 12px;
+    font-weight: 600;
+    cursor:pointer;
+    display: inline-block;
+    border: 1px solid white;
+    transition: .3s;
+    color:white
+}
+button:hover, .btn:hover{
+    background: #fff;
+    border:1px solid black;
+    color:black;
+}
+
+button:disabled{
+    opacity: 0.8;
+    color:var(--primary);
+    background: #f5c506;
+    cursor: not-allowed;
+}
+form{
+    max-width:400px;
+    margin:0 auto;
+    padding:30px;
+    border-radius:10px;
+    box-shadow: 1px 2px 6px rgba(131, 131, 131, 0.16);
+    border:1px solid var(--secondary);
+    background-color: #0b1015;
+}
+input, textarea{
+    border:0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.68);
+    border-bottom: 1px solid var(--secondary);
+    padding:10px;
+    outline: none;
+    display: block;
+    width:100%;
+    box-sizing: border-box;
+    margin:20px auto;
+    background: transparent;
+}
+.error{
+    color:var(--warning);
+    font-size: 14px;
+    font-weight: 600;
+    margin:16px 0;
+}
+
+@media screen and (max-width:500px) {
+    .btn-links-container{
+        display: flex;
+        align-items: center;
+        width:300px;
+    }
+    .nav-btn{
+        margin-right: 0;
+        max-width: 80px;
+        padding:0px;
+    }
+    .logo svg{
+        display: none;
+    }
+}

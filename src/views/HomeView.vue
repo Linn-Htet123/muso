@@ -1,18 +1,24 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div v-if="documents">
+      <playList :playlists="documents"/>
   </div>
+  <small v-if="error" class="error">{{error}}</small>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
+import getCollection from "@/composables/getCollection";
+import playList from "@/components/playList";
 export default {
   name: 'HomeView',
-  components: {
-    HelloWorld
+  components:{playList},
+  setup(){
+    const {error, documents} = getCollection('playlists')
+
+    return{error,documents}
   }
 }
 </script>
+<style>
+
+</style>
